@@ -1,9 +1,6 @@
 ---
 name: template-skill
 description: Replace with a description of the skill and when an agent should use it.
-license: MIT
-metadata:
-  author: internet-development
 ---
 
 # Template Skill
