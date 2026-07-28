@@ -39,6 +39,17 @@ Only export what outside code needs.
 
 Private files can change without affecting callers.
 
+Entrypoints use explicit named exports so definitions remain searchable:
+
+```typescript
+// GOOD
+export { createStripeClient } from "./stripeClient";
+export type { StripeClientOptions } from "./stripeClient";
+
+// BAD
+export * from "./stripeClient";
+```
+
 ## Composition Flow
 
 Dependencies point inward:
@@ -88,3 +99,5 @@ Do not use `utils` as a dumping ground.
 ## Split Rule
 
 If a file owns multiple concerns, split it by ownership before adding more code.
+
+Name each resulting module after the domain concept it owns. Avoid replacements such as `helpers.ts`, `utils.ts`, or `common.ts` that merely move the ambiguity.

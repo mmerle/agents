@@ -21,7 +21,13 @@ These are the conventions agents must follow immediately. Load reference files f
 
 No self-documenting comments. No commenting what code does — only why.
 
-See [refereces/commenting.md](references/commenting.md) for full patterns.
+See [references/commenting.md](references/commenting.md) for full patterns.
+
+### Naming
+
+Treat names and paths as search terms. Exported symbols use specific, domain-bearing names and canonical vocabulary. Keep private local names proportional rather than mechanically verbose.
+
+See [references/file-organization.md](references/file-organization.md).
 
 ### Composition
 

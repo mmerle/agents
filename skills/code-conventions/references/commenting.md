@@ -26,6 +26,12 @@ if (!user) return;
 // ==========================================
 ```
 
+## Comment Placement
+
+Put non-obvious invariants on the definition they govern. Do not rely only on a distant README or comments at individual call sites.
+
+Document intentional absence where a reader would reasonably expect behavior to exist, such as deliberately omitted caching, sanitization, retries, or authorization.
+
 ## Format Rules
 
 - Use `//` for TypeScript/JavaScript, `/* */` for CSS, `#` for Shell

@@ -74,6 +74,45 @@ export function createUser(name: string): User {
 }
 ```
 
+### Explicit Public Signatures
+
+Exported functions declare their parameter and return types explicitly. A reader should understand the public contract without opening the implementation.
+
+```tsx
+export function enrichUser(user: User): EnrichedUser {
+  return { ...user, enrichedAt: new Date() };
+}
+```
+
+Inferred return types remain appropriate for private local functions when the contract is obvious.
+
+### Domain-Specific Types
+
+Use domain-specific type names instead of generic exported names such as `Data`, `Result`, or `Config`.
+
+Use branded or opaque types when multiple primitive values are realistically confusable:
+
+```tsx
+type UserId = string & { readonly __brand: "UserId" };
+type OrganizationId = string & { readonly __brand: "OrganizationId" };
+```
+
+Do not brand primitives when there is no meaningful substitution risk.
+
+### Searchable Exports
+
+- Prefer explicit named exports over `export *`.
+- Preserve canonical imported names; avoid local aliases unless required by a collision.
+
+### Deprecated APIs
+
+Remove obsolete APIs when possible. When compatibility requires keeping one, mark it with `@deprecated` and name the replacement:
+
+```tsx
+/** @deprecated Use createStripeClient instead */
+export function createClient() {}
+```
+
 ---
 
 ## DON'T

@@ -9,7 +9,7 @@ globs:
 
 # Style
 
-> CSS modules as 's', Tailwind conventions, no inline styles
+> CSS modules as 's', no inline styles
 
 ---
 
@@ -20,13 +20,6 @@ globs:
 ```tsx
 import s from './component.module.css'
 function Component() { return <div className={s.wrapper}>...</div> }
-```
-
-### Tailwind for Utilities
-
-```tsx
-<div className="flex items-center gap-4 p-6">
-<h1 className="text-2xl font-bold text-balance">
 ```
 
 ### CSS Modules for Complex Components
@@ -43,18 +36,6 @@ function Component() { return <div className={s.wrapper}>...</div> }
 [data-theme='dark'] { --color-primary: #66b3ff; }
 ```
 
-### Conditional Classes with cn()
-
-```tsx
-<button className={cn('px-4 py-2', variant === 'primary' && 'bg-blue-500')}>
-```
-
-### Viewport Units
-
-```tsx
-<div className="h-dvh">  {/* Not h-screen */}
-```
-
 ---
 
 ## DON'T
@@ -64,14 +45,14 @@ function Component() { return <div className={s.wrapper}>...</div> }
 <div style={{ padding: '20px' }}>
 // OK: Dynamic values only
 <div style={{ '--progress': `${percent}%` } as CSSProperties}>
-
-// WRONG: Arbitrary z-index
-<div className="z-[9999]">
-// CORRECT: Scale (10=dropdown, 20=sticky, 30=modal, 40=toast)
-<div className="z-30">
 ```
 
 ```css
+/* WRONG: Arbitrary z-index */
+.element { z-index: 9999; }
+/* CORRECT: Scale (10=dropdown, 20=sticky, 30=modal, 40=toast) */
+.modal { z-index: 30; }
+
 /* WRONG: Animate layout */
 .animate { transition: width 0.3s; }
 /* CORRECT: Compositor-only */
@@ -88,10 +69,6 @@ import '@/styles/globals.css'  // Only in layout.tsx
 
 ---
 
-## Typography
-
-> Typography utilities (`text-balance`, `text-pretty`, `tabular-nums`): see `rules/ui-skills.md`.
-
 ## Z-Index Scale
 
 | Layer | Value |
@@ -103,6 +80,5 @@ import '@/styles/globals.css'  // Only in layout.tsx
 
 ## Tools
 
-- **Tailwind CSS v4**
 - **CSS Modules**
 - **Biome**
