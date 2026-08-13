@@ -9,7 +9,7 @@
 | **Utility files**    | camelCase with a domain concept     | `dateFormatting.ts`, `billingConstants.ts`, `userQueries.ts`    |
 | **Directories**      | lowercase, singular when a category | `components/`, `common/`, `modules/`, `runtime/`                |
 | **Pages**            | lowercase or kebab-case             | `pages/examples/accordion.tsx`                                  |
-| **CSS classes**      | kebab-case with `_` modifier        | `.root`, `.action-button`, `.left-panel`, `.left-panel_inner`   |
+| **CSS classes**      | kebab-case with `_` for owned children | `.root`, `.action-button`, `.left-panel`, `.left-panel_inner`   |
 | **CSS variables**    | kebab-case with prefix              | `--theme-background`, `--color-gray-60`                         |
 | **TypeScript types** | PascalCase with a domain concept    | `UserProfileResult`, `NotificationDeliveryConfig`               |
 | **Functions**        | camelCase with a specific operation | `getUserProfile()`, `formatInvoiceDate()`, `isShoppingCartEmpty()` |
