@@ -36,31 +36,34 @@ New projects use native CSS nesting instead of SCSS:
 
 ## Class Names
 
-Use `c-` only for explicit UI components, never as a general class prefix. Use `o-` for reusable layout patterns and `u-` for single-purpose utilities.
+Use `c-` only for a deliberately created component with its own implementation. Do not infer a component from its visual role or because the page uses React, Twig, or another component-capable framework. Regular sections, wrappers, and content use unprefixed classes.
+
+Use `o-` for reusable layout patterns and `u-` for single-purpose utilities.
 
 Use `_` for owned elements and `-` for simple modifiers.
 
 Use `data-*` for named variants and JavaScript hooks. Use `is-*` for current state and `has-*` when an element's contents or context affect it.
 
 ```html
-<article class="c-card">
-  <h2 class="c-card_title">Account</h2>
-</article>
+<section class="account-summary">
+  <h2 class="account-summary_title">Account</h2>
+</section>
 
 <div class="o-grid"></div>
 
 <span class="u-screen-reader-text">Loading</span>
 
+<!-- Class owned by the Button component -->
 <button class="c-button -with-icon" data-size="sm" data-variant="primary">
   <span class="c-button_icon" aria-hidden="true">→</span>
   Continue
 </button>
 
-<div class="c-dialog is-open" data-module-dialog>
-  <button class="c-dialog_close" data-dialog="close">Close</button>
+<div class="contact-dialog is-open" data-module-dialog>
+  <button class="contact-dialog_close" data-dialog="close">Close</button>
 </div>
 
-<form class="c-form has-errors"></form>
+<form class="contact-form has-errors"></form>
 ```
 
 ## Style Ownership
