@@ -1,6 +1,6 @@
 ---
 name: code-conventions
-description: Write code following my conventions — commenting, file organization, component architecture, CSS patterns, TypeScript config, API patterns, and tooling. Use when writing or reviewing code in any project.
+description: Write code following my conventions — commenting, file organization, component architecture, CSS patterns, TypeScript config, API patterns, and tooling. Use when writing or changing code in any project.
 ---
 
 # Code Conventions
